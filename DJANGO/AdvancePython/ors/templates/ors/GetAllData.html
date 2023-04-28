@@ -1,0 +1,51 @@
+{% extends 'ors/base.html' %}
+{% load static %}
+{%block title%}
+<title>"GETALLDATA"</title>
+{%endblock%}
+
+{%block body%}
+<body>
+   
+    {% include "ors/Header.html" %}
+    
+    <div class="container" style="margin-top: 100px; margin-bottom: 100px;"> 
+        {% include 'ors/msg.html' %}
+        <h1>Get All Marksheet Details</h1>
+        
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <!--Column Name-->
+                    <th>Rollno</th>
+                    <th>Name</th>
+                    <th>Physics</th>
+                    <th>Chemistry</th>
+                    <th>Maths</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {%for object in Data %}
+                <tr>
+                    <td>{{object.rollno}}</td>
+                    <td>{{object.name}}</td>
+                    <td>{{object.physics}}</td>
+                    <td>{{object.chemistry}}</td>
+                    <td>{{object.maths}}</td>
+                    <td>
+                        <a href="/ORS/edit/{{object.id}}"><span class="glyphicon glyphicon-pencil"></span></a>
+                        <a href="/ORS/delete/{{object.id}}"><span class="glyphicon glyphicon-trash"></span></a>
+                    </td>
+                </tr>
+                {%endfor%}
+            </tbody>
+            
+        </table>
+    </div>
+   
+    {% include "ors/Footer.html" %}
+
+</body>
+{%endblock%}

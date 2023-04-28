@@ -1,0 +1,17 @@
+
+body{
+    background-color: rgb(13, 219, 219);
+}
+
+
+#homelink{
+    text-decoration: none;
+    text-align: center;
+    color: brown;
+    text-shadow: 2px 2px 5px red;
+}
+
+img{
+    height: 230px;
+    width: 260px;
+}

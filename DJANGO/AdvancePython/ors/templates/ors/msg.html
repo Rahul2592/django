@@ -1,0 +1,12 @@
+
+{%if messages%}
+<div class="messages">
+    {%for msg in messages%}
+        <div class="alert alert-{{msg.tags}} alert-dismissible" role="alert">
+            {{msg}}
+         <a href="#" class="close" data-dismiss="alert">&times;</a>
+    </div>
+   
+    {% endfor %}
+</div>
+{% endif%}

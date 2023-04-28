@@ -1,0 +1,37 @@
+{% extends 'ors/base.html' %}
+{% load static %}
+
+{%block title%}
+<title>" User Registration"</title>
+{%endblock%}
+
+{%block body%}
+<body>
+    {% include "ors/Header.html" %}
+    {% include 'ors/msg.html' %}
+
+    <div class="container" style="margin-top: 80px; margin-bottom: 80px;">
+        <h1>User Registration</h1>
+        <form action="{%url 'SIGN_IN'%}" method="POST">
+            {% csrf_token%}
+            <div class="form-group">
+                <label>Enter UserName</label>
+                <input type="text" name="uname" value="" placeholder="Enter UserName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>Enter Password</label>
+                <input type="password" name="pwd" value="" placeholder="Enter Password" class="form-control">
+            </div>
+
+            <div>
+                <input type="submit" value="submit" class="btn btn-info">
+            </div>
+
+        </form>
+
+    </div>
+
+    {% include "ors/Footer.html" %}
+</body>
+{%endblock%}

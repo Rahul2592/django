@@ -1,0 +1,64 @@
+{% extends 'ors/Base.html' %}
+{% load static %}
+
+{%block title%}
+<title>"Header"</title>
+{%endblock%}
+
+{%block body%}
+<body>
+    {% include 'ors/msg.html' %}
+
+   <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="https://www.raystec.com/">Ray Technology</a>
+        </div>
+        
+
+        <div class="container-fluid">
+            
+            <ul class="nav navbar-nav">
+                <li><a href="/ORS/">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                {% if user.is_authenticated %}
+                
+                
+                    <li class="dropdown">
+                        <a href="" class="dropdown-toggle" data-toggle="dropdown">Welcome {{request.user}}
+                            <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li><a href="{%url 'ADD'%}">ADD</a></li>
+                            <li><a href="{%url 'GET_ALL'%}">GETALLDATA</a></li>
+                            <li claSS="divider"></li>
+                            <li><a href="{%url 'SIGN_OUT'%}">LogOut</a></li>
+                        </ul>
+                    </li>
+                
+            </ul>
+
+            {% else %}
+
+
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{%url 'SIGN_UP'%}">SignUp</a></li>
+                <li><a href="{%url 'SIGN_IN'%}">SignIn</a></li>
+            </ul>
+
+            {% endif %}
+
+            
+        </div>
+    </nav>
+   
+
+   
+</body>
+
+{%endblock%}

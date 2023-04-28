@@ -1,0 +1,31 @@
+{% extends 'ors/base.html' %}
+{% load static %}
+
+{%block title%}
+<title>"Index"</title>
+{%endblock%}
+
+
+
+{%block body%}
+
+{% include 'ors/msg.html' %}
+        
+<body onload="getDate()">
+
+    <center>
+        <h1 id="date" style="margin-top:50px;"></h1>
+
+        {% include "ors/Header.html" %}
+
+        <div class="container" style="margin-top: 5px; margin-bottom: 50px;">
+
+            <h1><a href="{%url 'HOME'%}">Welcome to ORS</a></h1>
+            <img onmouseover="rotateImg()" id="i1" src="{%static 'images/logo.png'%}">
+        </div
+    </center>
+
+        {% include "ors/Footer.html" %}
+
+</body>
+{%endblock%}
